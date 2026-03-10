@@ -1,0 +1,24 @@
+# DADOS E PERSISTÊNCIA
+# Bloqueia a pasta de dados inteira (onde estão os PDFs e o SQLite)
+data/
+# Bloqueia arquivos SQLite específicos caso estejam fora da pasta data
+*.db
+*.sqlite3
+
+# PYTHON
+# Arquivos de cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# DOCKER
+.env
+
+# VS CODE / SISTEMA
+.vscode/
+.DS_Store
+Thumbs.db
