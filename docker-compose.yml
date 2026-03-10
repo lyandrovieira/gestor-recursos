@@ -1,0 +1,16 @@
+services:
+  gestor-app:
+    build: .
+    container_name: gestor_recursos_escolares
+    ports:
+      - "8502:8501"
+    volumes:
+      # Mapeia o código para desenvolvimento em tempo real
+      - ./app:/app
+      # PERSISTÊNCIA: Banco de dados e Arquivos
+      - ./data:/data
+    #restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M # Limite de segurança para seu i3-550
