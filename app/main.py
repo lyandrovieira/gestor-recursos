@@ -19,7 +19,7 @@ with st.form("registro_recurso", clear_on_submit=True):
     col1, col2 = st.columns(2)
     
     with col1:
-        nome = st.text_input("Nome do Recurso", placeholder="Ex: PDDE Estrutura 2026")
+        nome = st.text_input("Nome do Recurso", placeholder="Ex: PDDE 2026")
         valor = st.number_input("Valor Recebido (R$)", min_value=0.0, step=100.0)
     
     with col2:
@@ -64,3 +64,20 @@ if submit:
             st.error(f"Erro ao processar registro: {e}")
     else:
         st.warning("Por favor, preencha o nome e anexe um documento.")
+
+st.divider()
+st.subheader("📋 Recursos Cadastrados")
+
+try:
+    conn = sqlite3.connect(DB_FILE)
+    # Usamos o Pandas para ler o SQL e transformar em uma tabela bonita
+    import pandas as pd
+    df = pd.read_sql_query("SELECT id, nome, valor, data_limite, status, documento_path FROM recursos", conn)
+    conn.close()
+
+    if not df.empty:
+        st.dataframe(df, use_container_width=True)
+    else:
+        st.info("Nenhum recurso cadastrado até o momento.")
+except Exception as e:
+    st.error(f"Erro ao carregar tabela: {e}")

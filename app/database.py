@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 # Caminho absoluto dentro do container
-DB_PATH = "/app/data/db/gestor.db"
+DB_PATH = "/data/db/gestor.db"
 
 def init_db():
     # Cria a pasta db dentro de /app/data se ela não existir
