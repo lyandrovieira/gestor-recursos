@@ -14,14 +14,15 @@ def init_db():
     
     # Cria a tabela inicial para o seu Módulo de Entrada
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS recursos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            valor REAL NOT NULL,
-            data_limite TEXT NOT NULL,
-            status TEXT DEFAULT 'Pendente'
-        )
-    ''')
+    CREATE TABLE IF NOT EXISTS recursos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        valor REAL NOT NULL,
+        data_limite TEXT NOT NULL,
+        documento_path TEXT,
+        status TEXT DEFAULT 'Pendente'
+    )
+''')
     
     conn.commit()
     conn.close()
