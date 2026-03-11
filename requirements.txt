@@ -1,2 +1,8 @@
 streamlit
 pandas
+
+🟢🔴🟠🟡
+
+Se restar mais de 10 dias, está em dia.
+Se restar entre 5 a 10 dias e o percentual for maior que 50%, atenção. Senão, urgente.
+Se restar menos de 5 dias e o percentual for maior que 80%, atenção. Senão, urgente.
