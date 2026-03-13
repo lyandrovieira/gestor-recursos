@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalação das dependências Python
-# Criaremos o requirements.txt na próxima etapa, por ora:
 RUN pip install --no-cache-dir streamlit pandas
 
 # Expõe a porta padrão do Streamlit
