@@ -71,6 +71,7 @@ tabs = st.tabs(["📊 Painel", "🆕 Novo", "🖇️ Anexar", "🗑️ Excluir"]
 # PAINEL
 with tabs[0]:
     st.header("📊 Painel de Controle")
+    df_painel = listar_recursos()
 
     if not df_painel.empty:
         for _, row in df_painel.iterrows():
